@@ -24,7 +24,7 @@ function App() {
 
     const fetchMemories = async () => {
         try {
-            const res = await axios.get("http://localhost:5001/api/memories", {
+            const res = await axios.get("https://memoryvault-enhanced.onrender.com/api/memories", {
                 headers: { Authorization: `Bearer ${token}` },
             });
             setMemories(res.data);
@@ -71,7 +71,7 @@ function App() {
         formData.append("image", image);
 
         try {
-            const res = await axios.post("http://localhost:5001/api/memories", formData, {
+            const res = await axios.post("https://memoryvault-enhanced.onrender.com/api/memories", formData, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                     "Content-Type": "multipart/form-data",
@@ -156,7 +156,7 @@ function App() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {memories.map((memory) => (
                             <div key={memory._id} className="bg-white/10 backdrop-blur-lg rounded-xl shadow-lg p-6 border border-white/20">
-                                {memory.image && <img src={`http://localhost:5001/${memory.image}`} alt={memory.title} className="w-full h-48 object-cover rounded-lg mb-4" />}
+                                {memory.image && <img src={`https://memoryvault-enhanced.onrender.com/${memory.image}`} alt={memory.title} className="w-full h-48 object-cover rounded-lg mb-4" />}
                                 <h3 className="text-xl font-bold mb-2">{memory.title}</h3>
                                 <p className="text-gray-300 mb-2">{memory.description}</p>
                                 <p className="text-sm text-gray-400 mb-2">Emotion: {memory.emotion}</p>
