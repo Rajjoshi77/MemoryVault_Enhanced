@@ -11,7 +11,7 @@ const Register = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post("http://localhost:5001/api/auth/signup", { name, email, password });
+            await axios.post("https://memoryvault-enhanced.onrender.com/api/auth/signup", { name, email, password });
             alert("Registration successful! Please login.");
             navigate("/login");
         } catch (err) {
